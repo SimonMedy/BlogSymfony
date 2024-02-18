@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!
+{% endblock %}
+
+{% block body %}
+	<div class="container ms-4 mt-4">
+		<form method="post">
+			{% if error %}
+				<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			{% endif %}
+
+			{% if app.user %}
+				<div class="mb-3">
+					<text style="color:aliceblue">
+						{{'nav_connected'|trans}}
+						📧{{ app.user.userIdentifier }}
+					</text>
+					<a class="btn btn-warning ms-2" href="{{ path('app_logout') }}">{{'nav_deconnect'|trans}}</a>
+				</div>
+			{% else %}
+				<h1 class="h4 mb-2 text-primary" style="font-weight:bold">{{'entrez_infos'|trans}}</h1>
+				<label for="inputEmail">{{'label_email'|trans}}<text class="text-primary">*</text>
+				</label>
+				<input style="width:400px" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus><br/>
+				<label for="inputPassword">{{'label_motdepasse'|trans}}<text class="text-primary">*</text>
+				</label>
+				<input style="width:400px" type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required><br/>
+
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+				<button class="btn btn-lg btn-primary" type="submit">
+					{{'connection'|trans}}
+				</button>
+			{% endif %}
+		</form>
+	</div>
+{% endblock %}

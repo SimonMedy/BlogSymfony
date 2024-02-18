@@ -1,0 +1,92 @@
+#Navbar
+nav_connected: "🔒 You are connected as, "
+nav_deconnect: "🔓 Log out"
+connection: "🔑 Log in"
+inscription: "📝 Sign up"
+not_connected: "⚠️ You must be logged in and be an administrator to access this page!"
+not_admin: "⚠️ You must be an administrator to access this page!"
+user: "👤 User"
+admin: "👑 Administrator"
+
+#route accueil
+bienvenue: "👋 Welcome, start by logging in!"
+accueil: "🏠 Home"
+articles: "📰 Articles"
+commentaires: "💬 Comments"
+creer_article: "Create a new article"
+creer_categories: "Create a new category"
+decouvre_categories: "Discover our latest categories!"
+
+#route categorie/id not found
+categorie_notfound: "Oops! Category not found... 🤔"
+categorie_btn: "Back to categories"
+accueil_btn: "Back to home"
+
+#route article/id not found
+article_notfound: "Oops! Article not found... 🤔"
+article_btn: "Back to articles"
+commentaire_notfound: "Oops! Comment not found... 🤔"
+
+#route categorie/id
+categorie_id_table: "🆔 ID"
+categorie_titre_table: "📘 Title"
+Titre: '📘 Title'
+supprimer_categorie: "Delete category"
+Sauvegarder: '💾 Save'
+action_table: "🎬 Action"
+aucune_categories: "We cannot create an article because there are no categories"
+modif_categorie: "Edit category:"
+
+#route categorie/create
+ajouter_categorie: "Add a new category:"
+
+#route article/create
+ajouter_article: "Add a new article"
+
+#route article/id
+article_id_table: "🆔 ID"
+article_titre_table: "📘 Title"
+article_contenu_table: "Content"
+article_categorie_table: "Category"
+article_etat_table: "Status"
+supprimer_commentaire: "Delete comment"
+modif_article: "Edit article:"
+auteur: "Author:"
+date_creation: "Creation date:"
+statut: "Status:"
+publié: "Published"
+brouillon: "Draft"
+date_publication: "Publication date:"
+no_commentaire: "⚠️There are no comments for this article yet"
+liste_commentaire: "List of comments:"
+cree_par: "Created by"
+vous: "(You)"
+Brouillon: "Draft"
+Publié: "Published"
+
+#route commentaires
+aucun_articles: "We cannot create a comment because there are no articles"
+ajouter_commentaire: "Add a comment"
+Article: "Article"
+Etat: "Status"
+Activé: "Activated"
+Désactivé: "Deactivated"
+Enregistrer: "Save"
+Commentaire: "Comment"
+liste_articles: "List of articles in the category:"
+pas_articles: "⚠️There are no articles in this category yet"
+
+#route articles
+click_article: "Click on an article to discover its content!"
+
+#route register
+entrez_infos: "🔐 Enter your login information:"
+entrez_infos_inscription: "🔏 Enter your registration information"
+label_email: "✉️ Email"
+label_motdepasse: "🔑 Password"
+
+Email: "✉️ Email"
+Plain password: "🔑 Password"
+Agree terms: "Agree to the terms of use"
+Nom: "🖋️ Last Name"
+Prenom: "🖋️ First Name"

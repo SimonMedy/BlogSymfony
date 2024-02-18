@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategorieController!
+{% endblock %}
+
+{% block body %}
+	<div class="container ms-4 mt-4">
+		{% if categories is empty %}
+			<h5 class="text-warning" style="font-size:1.2rem; font-style:italic">⚠️{{'aucune_categories'|trans}}</h5>
+			{% if is_granted('ROLE_ADMIN') %}
+				<div class=" mt-3">
+					<a class="btn btn-outline-warning" href="{{path('categorie_create')}}">{{'creer_categories'|trans}}</a>
+				</div>
+			{% endif %}
+		{% else %}
+			{{form_start(form)}}
+			<div class="mt-2">
+				<h5 class="text-primary" style="font-weight:bold">📝{{'ajouter_article'|trans}}</h5>
+				{{form_errors(form)}}
+
+				<div class="mt-2">
+					{{form_label(form.titre)}}<text class="text-primary">*</text><br>
+					{{form_widget(form.titre)}}
+				</div>
+
+				<div class="mt-2">
+					{{form_label(form.contenu)}}<text class="text-primary">*</text><br>
+					{{form_widget(form.contenu)}}
+				</div>
+
+				<div class="mt-2">
+					{{form_label(form.categorie)}}<text class="text-primary">*</text><br>
+					{{form_widget(form.categorie)}}
+				</div>
+
+				<div class="mt-2">
+					{{form_label(form.etat)}}<text class="text-primary">*</text><br>
+					{{form_widget(form.etat)}}
+				</div>
+
+				<div class="mt-3">
+					{{form_widget(form.submit, { 'label': 'Enregistrer' }) }}
+				</div>
+			</div>
+			{{form_end(form)}}
+		{% endif %}
+	</div>
+
+{% endblock %}

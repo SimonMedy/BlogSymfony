@@ -1,0 +1,92 @@
+#Navbar
+nav_connected: "🔒 あなたは、としてログインしています "
+nav_deconnect: "🔓 ログアウト"
+connection: "🔑 ログイン"
+inscription: "📝 サインアップ"
+not_connected: "⚠️ このページにアクセスするにはログインして管理者である必要があります！"
+not_admin: "⚠️ このページにアクセスするには管理者である必要があります！"
+user: "👤 ユーザー"
+admin: "👑 管理者"
+
+#route accueil
+bienvenue: "👋 ようこそ、まずはログインしてください！"
+accueil: "🏠 ホーム"
+articles: "📰 記事"
+commentaires: "💬 コメント"
+creer_article: "新しい記事を作成"
+creer_categories: "新しいカテゴリを作成"
+decouvre_categories: "最新のカテゴリを発見！"
+
+#route categorie/id not found
+categorie_notfound: "おっと！カテゴリが見つかりません... 🤔"
+categorie_btn: "カテゴリに戻る"
+accueil_btn: "ホームに戻る"
+
+#route article/id not found
+article_notfound: "おっと！記事が見つかりません... 🤔"
+article_btn: "記事に戻る"
+commentaire_notfound: "おっと！コメントが見つかりません... 🤔"
+
+#route categorie/id
+categorie_id_table: "🆔 ID"
+categorie_titre_table: "📘 タイトル"
+Titre: '📘 タイトル'
+supprimer_categorie: "カテゴリを削除"
+Sauvegarder: '💾 保存'
+action_table: "🎬 アクション"
+aucune_categories: "カテゴリがないため、記事を作成することはできません"
+modif_categorie: "カテゴリを編集："
+
+#route categorie/create
+ajouter_categorie: "新しいカテゴリを追加："
+
+#route article/create
+ajouter_article: "新しい記事を追加"
+
+#route article/id
+article_id_table: "🆔 ID"
+article_titre_table: "📘 タイトル"
+article_contenu_table: "コンテンツ"
+article_categorie_table: "カテゴリ"
+article_etat_table: "状態"
+supprimer_commentaire: "コメントを削除"
+modif_article: "記事を編集："
+auteur: "著者："
+date_creation: "作成日："
+statut: "ステータス："
+publié: "公開"
+brouillon: "下書き"
+date_publication: "公開日："
+no_commentaire: "⚠️ この記事にはまだコメントがありません"
+liste_commentaire: "コメントのリスト："
+cree_par: "作成者"
+vous: "(あなた)"
+Brouillon: "下書き"
+Publié: "公開"
+
+#route commentaires
+aucun_articles: "記事がないため、コメントを作成することはできません"
+ajouter_commentaire: "コメントを追加"
+Article: "記事"
+Etat: "状態"
+Activé: "有効"
+Désactivé: "無効"
+Enregistrer: "保存"
+Commentaire: "コメント"
+liste_articles: "カテゴリの記事リスト："
+pas_articles: "⚠️このカテゴリにはまだ記事がありません"
+
+#route articles
+click_article: "記事をクリックして、内容を確認してください！"
+
+#route register
+entrez_infos: "🔐 ログイン情報を入力してください："
+entrez_infos_inscription: "🔏 登録情報を入力してください"
+label_email: "✉️ メール"
+label_motdepasse: "🔑 パスワード"
+
+Email: "✉️ メール"
+Plain password: "🔑 パスワード"
+Agree terms: "利用規約に同意する"
+Nom: "🖋️ 名"
+Prenom: "🖋️ 姓"

@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Article Not Found
+{% endblock %}
+
+{% block body %}
+	<div class="container ms-4 mt-4">
+		<h5>🔔{{'article_notfound'|trans}}</h5>
+		<div class="mt-3">
+			<button type="button" class="btn btn-primary" onclick="window.location.href='{{path('app_articles')}}'">{{'article_btn'|trans}}</button>
+		</div>
+        <div class="mt-3">
+			<button type="button" class="btn btn-outline-primary" onclick="window.location.href='{{path('app_accueil')}}'">{{'accueil_btn'|trans}}</button>
+		</div>
+	</div>
+{% endblock %}

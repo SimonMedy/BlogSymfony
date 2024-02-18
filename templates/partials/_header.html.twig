@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="{{path('app_accueil')}}">.IPSSI</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarColor01">
+			<ul class="navbar-nav me-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="{{path('app_accueil')}}">{{'accueil'|trans}}
+						<span class="visually-hidden">(current)</span>
+					</a>
+				</li>
+				{% if app.user%}
+					<li class="nav-item">
+						<a class="nav-link" href="{{path('app_articles')}}">{{'articles'|trans}}
+							<span class="visually-hidden">(current)</span>
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="{{path('app_commentaires')}}">{{'commentaires'|trans}}
+							<span class="visually-hidden">(current)</span>
+						</a>
+					</li>
+				{% endif %}
+			</ul>
+		</div>
+		{% if app.user%}
+			<div>
+				<text style="color:aliceblue">
+					{% if is_granted('ROLE_ADMIN') %}
+						<span class="badge rounded-pill bg-danger">{{'admin'|trans}}</span>
+					{% else %}
+						<span class="badge bg-dark">{{'user'|trans}}</span>
+					{% endif %}
+					{{'nav_connected'|trans}}
+					📧{{ app.user.userIdentifier }}
+					<a class="btn btn-warning ms-2" href="{{ path('app_logout') }}">{{'nav_deconnect'|trans}}</a>
+				</text>
+			</div>
+		{% else %}
+			<a class="btn btn-warning ms-2" href="{{ path('app_login') }}">{{'connection'|trans}}</a>
+			<a class="btn btn-light ms-2" href="{{ path('app_register') }}">{{'inscription'|trans}}</a>
+		{% endif %}
+	</div>
+</nav>

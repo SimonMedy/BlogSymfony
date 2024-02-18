@@ -1,0 +1,123 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Article detail
+{% endblock %}
+
+{% block body %}
+	<div class="container ms-4 mt-4">
+		{% if is_granted('ROLE_ADMIN') or article.auteur == app.user %}
+			<h4 class="card-title text-primary mb-2" style="font-weight:bold">{{'modif_article'|trans}}</h4>
+			{{form_start(form)}}
+			<table class="table table-hover">
+				<thead>
+					<tr class="table-primary">
+						<th scope="col">{{'article_id_table'|trans}}</th>
+						<th scope="col">{{'article_titre_table'|trans}}</th>
+						<th scope="col">{{'article_contenu_table'|trans}}</th>
+						<th scope="col">{{'article_categorie_table'|trans}}</th>
+						<th scope="col">{{'article_etat_table'|trans}}</th>
+						<th scope="col">{{'action_table'|trans}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="table-secondary">
+						<th scope="row">{{article.id}}</th>
+						<td>{{form_widget(form.titre)}}</td>
+						<td>{{form_widget(form.contenu)}}</td>
+						<td>{{form_widget(form.categorie)}}</td>
+						<td>{{form_widget(form.etat)}}</td>
+						<td>
+							{{form_widget(form.submit, { 'label': 'Sauvegarder' }) }}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			{{form_end(form)}}
+			{% if is_granted('ROLE_ADMIN') %}
+				<div class="mt-4">
+					{{dump(article)}}
+				</div>
+			{% endif %}
+		{% endif %}
+
+		<div class="card border-primary text-white mb-4 me-4" style="width:100%; text-decoration: none">
+			<div class="card-header d-flex justify-content-between align-items-center" style="max-width:100%">
+				<div class="d-flex">
+					<span class="badge rounded-pill bg-danger me-2">{{article.Categorie.titre}}</span>
+					<text style="color:aliceblue;font-weight:bold">{{'auteur'|trans}}
+						<text class="text-primary">{{article.auteur.nom}}
+							{{article.auteur.prenom}}</text>
+					</text>
+				</div>
+				<text class="text-primary">{{'date_creation'|trans}}
+					{{article.datecreation|date('Y/m/d - H:i:s')}}
+				</text>
+			</div>
+			<div class="card-body">
+				<h4 class="card-title" style="max-width:40rem; font-weight:bold">{{article.titre}}</h4>
+				<p class="card-text" style="max-width:40rem">{{'statut'|trans}}
+					{% if article.etat == false %}
+						<text class="text-warning">{{'publié'|trans}}</text>
+					{% else %}
+						<text class="text-success">{{'brouillon'|trans}}</text>
+					{% endif %}
+				</p>
+				{% if article.etat == true %}
+					<text class="text-primary">{{'date_publication'|trans}}
+						{{article.dateparution|date('Y/m/d - H:i:s')}}
+					</text>
+				{% endif %}
+				{% if commentaires is empty %}
+					<h5 class="text-warning" style="font-size:1.2rem; font-style:italic">{{'no_commentaire'|trans}}</h5>
+				{% else %}
+					<div class="list-group mt-3">
+						<h5 class="card-text mb-1" style="max-width:40rem; font-weight:bold">{{'liste_commentaire'|trans}}</h5>
+						{% for commentaire in commentaires %}
+							{% if commentaire.etat == true %}
+								<div class="list-group-item list-group-item-action">
+									<div class="mb-2 text-primary" style="font-style:italic">{{'cree_par'|trans}}
+										{{commentaire.auteur.nom}}
+										{{commentaire.auteur.nom}}
+										{% if commentaire.auteur == app.user %}
+											<text class="text-success">{{'vous'|trans}}</text>
+										{% endif %}
+									</div>
+									<text style="font-weight:bold">{{commentaire.commentaire}}</text>
+									{% if is_granted('ROLE_ADMIN') or commentaire.auteur == app.user %}
+										<div class="mt-2 mb-2">
+											<a class="btn btn-primary" href="{{path('deleteCommentaire',{id:commentaire.id})}}">{{'supprimer_commentaire'|trans}}</a>
+										</div>
+									{% endif %}
+								</div>
+							{% else %}
+								{% if is_granted('ROLE_ADMIN') or commentaire.auteur == app.user %}
+									<div class="list-group-item list-group-item-action">
+										<div class="mb-2 text-primary" style="font-style:italic">{{'cree_par'|trans}}
+											{{commentaire.auteur.nom}}
+											{{commentaire.auteur.nom}}
+											{% if commentaire.auteur == app.user %}
+												<text class="text-success">{{'vous'|trans}}</text>
+											{% endif %}
+										</div>
+										<div class="mb-2" style="font-style:italic">
+											Etat du commentaire :
+											<text class="text-warning">
+												Désactivé
+											</text>
+										</div>
+										<text style="font-weight:bold">{{commentaire.commentaire}}</text>
+										{% if is_granted('ROLE_ADMIN') or commentaire.auteur == app.user %}
+											<div class="mt-2 mb-2">
+												<a class="btn btn-primary" href="{{path('deleteCommentaire',{id:commentaire.id})}}">{{'supprimer_commentaire'|trans}}</a>
+											</div>
+										{% endif %}
+									</div>
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

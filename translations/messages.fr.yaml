@@ -1,0 +1,92 @@
+#Navbar
+nav_connected: "🔒 Vous êtes connecté en tant que, "
+nav_deconnect: "🔓 Se déconnecter"
+connection: "🔑 Se connecter"
+inscription: "📝 S'inscrire"
+not_connected: "⚠️ Vous devez être connecté et être administrateur pour accéder à cette page !"
+not_admin: "⚠️ Vous devez être administrateur pour accéder à cette page !"
+user: "👤 Utilisateur"
+admin: "👑 Administrateur"
+
+#route accueil
+bienvenue: "👋 Bienvenue, commencez par vous connecter !"
+accueil: "🏠 Accueil"
+articles: "📰 Articles"
+commentaires: "💬 Commentaires"
+creer_article: "Créer un nouvel article"
+creer_categories: "Créer une nouvelle catégorie"
+decouvre_categories: "Découvrez nos dernières catégories !"
+
+#route categorie/id not found
+categorie_notfound: "Oups! La catégorie n'a pas été trouvée... 🤔"
+categorie_btn: "Retourner aux catégories"
+accueil_btn: "Retourner à l'accueil"
+
+#route article/id not found
+article_notfound: "Oups! L'article n'a pas été trouvé... 🤔"
+article_btn: "Retourner aux articles"
+commentaire_notfound: "Oups! Le commentaire n'a pas été trouvé... 🤔"
+
+#route categorie/id
+categorie_id_table: "🆔 ID"
+categorie_titre_table: "📘 Titre"
+Titre: '📘 Titre'
+supprimer_categorie: "Supprimer la catégorie"
+Sauvegarder: '💾 Sauvegarder'
+action_table: "🎬 Action"
+aucune_categories: "Nous ne pouvons pas créer d'article car il n'y pas de catégorie"
+modif_categorie: "Modifier la catégorie :"
+
+#route categorie/create
+ajouter_categorie: "Ajouter une nouvelle catégorie :"
+
+#route article/create
+ajouter_article: "Ajouter un nouvel article"
+
+#route article/id
+article_id_table: "🆔 ID"
+article_titre_table: "📘 Titre"
+article_contenu_table: "Contenu"
+article_categorie_table: "Categorie"
+article_etat_table: "Etat"
+supprimer_commentaire: "Supprimer le commentaire"
+modif_article: "Modifier l'article :"
+auteur: "Auteur :"
+date_creation: "Date de création :"
+statut: "Statut :"
+publié: "Publié"
+brouillon: "Brouillon"
+date_publication: "Date de publication :"
+no_commentaire: "⚠️Il n'y a pas encore de commentaires pour cet article"
+liste_commentaire: "Liste des commentaires :"
+cree_par: "Crée par"
+vous: "(Vous)"
+Brouillon: "Brouillon"
+Publié: "Publié"
+
+#route commentaires
+aucun_articles: "Nous ne pouvons pas créer de commentaire car il n'y pas d'article"
+ajouter_commentaire: "Ajouter un commentaire"
+Article: "Article"
+Etat: "Etat"
+Activé: "Activé"
+Désactivé: "Désactivé"
+Enregistrer: "Enregistrer"
+Commentaire: "Commentaire"
+liste_articles: "Liste des articles de la catégorie :"
+pas_articles: "⚠️Il n'y a pas encore d'articles dans cette catégorie"
+
+#route articles
+click_article: "Cliquez sur un article pour découvrir son contenu !"
+
+#route register
+entrez_infos: "🔐 Rentrez vos informations de connexion :"
+entrez_infos_inscription: "🔏 Rentrez vos informations d'inscription"
+label_email: "✉️ Email"
+label_motdepasse: "🔑 Mot de passe"
+
+Email: "✉️ Email"
+Plain password: "🔑 Mot de passe"
+Agree terms: "Accepter les conditions d'utilisation"
+Nom: "🖋️ Nom"
+Prenom: "🖋️ Prenom"

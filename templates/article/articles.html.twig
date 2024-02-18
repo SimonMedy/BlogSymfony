@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticlesController!
+{% endblock %}
+
+{% block body %}
+	<div class="w-100 ms-4 me-4 mt-3">
+		<h5 class="text-primary" style="font-weight:bold">{{'click_article'|trans}}</h5>
+	</div>
+
+	<div class="d-flex flex-wrap align-content-center w-100 ms-4 me-4 mt-3">
+		{% for article in articles %}
+			<a href="{{path("article",{id:article.id})}}" class="card border-primary text-white mb-4 me-4" style="width:48%; text-decoration: none">
+				<div class="card-header d-flex justify-content-between align-items-center" style="max-width:100%">
+					<div class="d-flex">
+						<span class="badge rounded-pill bg-danger me-2">{{article.Categorie.titre}}</span>
+						<text style="color:aliceblue;font-weight:bold">{{'auteur'|trans}}
+							<text class="text-primary">{{article.auteur.nom}}
+								{{article.auteur.prenom}}</text>
+							{% if article.auteur == app.user %}
+								<text class="text-success">{{'vous'|trans}}</text>
+							{% endif %}
+						</text>
+					</div>
+					<text class="text-primary">{{'date_creation'|trans}}
+						{{article.datecreation|date('Y/m/d - H:i:s')}}
+					</text>
+				</div>
+				<div class="card-body">
+					<h4 class="card-title" style="max-width:40rem; font-weight:bold">{{article.titre}}</h4>
+					<p class="card-text" style="max-width:40rem">{{'statut'|trans}}
+						{% if article.etat == false %}
+							<text class="text-warning">{{'brouillon'|trans}}</text>
+						{% else %}
+							<text class="text-success">{{'publié'|trans}}</text>
+						{% endif %}
+					</p>
+					{% if article.etat == true %}
+						<text class="text-primary">{{'date_publication'|trans}}
+							{{article.dateparution|date('Y/m/d - H:i:s')}}
+						</text>
+					{% endif %}
+				</div>
+			</a>
+		{% endfor %}
+	</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+	<div class="container ms-4 mt-4">
+		{% if app.user %}
+			<div class="mb-3">
+				<text style="color:aliceblue">
+					{{'nav_connected'|trans}}
+					📧{{ app.user.userIdentifier }}
+				</text>
+				<a class="btn btn-warning ms-2" href="{{ path('app_logout') }}">{{'nav_deconnect'|trans}}</a>
+			</div>
+		{% else %}
+			<h1 class="h4 mb-2 text-primary" style="font-weight:bold">{{'entrez_infos_inscription'|trans}}</h1>
+			{{ form_errors(registrationForm) }}
+			{{ form_start(registrationForm) }}
+
+			<div class="mt-2">
+				{{form_label(registrationForm.nom)}}<text class="text-primary">*</text><br>
+				{{form_widget(registrationForm.nom)}}
+			</div>
+
+			<div class="mt-2">
+				{{form_label(registrationForm.prenom)}}<text class="text-primary">*</text><br>
+				{{form_widget(registrationForm.prenom)}}
+			</div>
+
+			<div class="mt-2">
+				{{form_label(registrationForm.email)}}<text class="text-primary">*</text><br>
+				{{form_widget(registrationForm.email)}}
+			</div>
+
+			<div class="mt-2">
+				{{form_label(registrationForm.plainPassword)}}<text class="text-primary">*</text><br>
+				{{form_widget(registrationForm.plainPassword, {label: 'Password'})}}
+			</div>
+
+			<div class="mt-2">
+				{{ form_label(registrationForm.agreeTerms) }}&nbsp;&nbsp;
+				{{ form_widget(registrationForm.agreeTerms) }}
+			</div>
+
+			<div class="mt-3">
+				<button type="submit" class="btn btn-lg btn-primary">{{'inscription'|trans}}</button>
+			</div>
+
+			{{ form_end(registrationForm) }}
+		{% endif %}
+	</div>
+{% endblock %}
